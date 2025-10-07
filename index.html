@@ -1,110 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wikipedia Book Club (London) - Wikipedia</title>
+  <meta name="description" content="The Wikipedia Book Club (London) is an in-person discussion group reading and discussing Wikipedia articles in central London.">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png">
 
-  <!-- Wikipedia style mimic -->
+  <!-- Wikipedia-like styling -->
   <style>
-    body {
-      font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
-      background: #f8f9fa;
-      color: #202122;
-      margin: 0;
+    :root {
+      --wiki-bg: #f8f9fa;
+      --wiki-border: #a2a9b1;
+      --wiki-text: #202122;
+      --wiki-link: #0645ad;
+      --wiki-link-visited: #0b0080;
+      --wiki-link-hover: #3366cc;
     }
 
-    a {
-      color: #0645ad;
-      text-decoration: none;
+    html, body {
+      background-color: var(--wiki-bg);
+      color: var(--wiki-text);
+      margin: 0;
+      font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
+      line-height: 1.6;
     }
-    a:hover { text-decoration: underline; }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1em;
+    }
 
     #content {
-      max-width: 900px;
-      margin: 2em auto;
-      padding: 0 1em;
       background: white;
-      border: 1px solid #a2a9b1;
+      max-width: 960px;
+      width: 100%;
+      border: 1px solid var(--wiki-border);
       border-radius: 2px;
+      padding: 1.5em 2em;
+      margin-top: 2em;
+      box-sizing: border-box;
     }
 
     h1 {
       font-family: "Linux Libertine", "Georgia", serif;
-      border-bottom: 1px solid #a2a9b1;
       font-size: 1.8em;
-      margin-bottom: 0.2em;
       font-weight: normal;
+      border-bottom: 1px solid var(--wiki-border);
+      margin-bottom: 0.4em;
     }
 
     h2 {
-      border-bottom: 1px solid #a2a9b1;
       font-size: 1.4em;
-      margin-top: 1.5em;
+      border-bottom: 1px solid var(--wiki-border);
+      margin-top: 1.8em;
     }
 
-    h3 { font-size: 1.2em; margin-top: 1em; }
+    h3 {
+      font-size: 1.2em;
+      margin-top: 1.2em;
+    }
 
-    p { line-height: 1.6; }
+    p, ul, li {
+      font-family: "Arial", "Helvetica", sans-serif;
+      line-height: 1.6;
+    }
 
+    ul { margin-top: 0.5em; }
+
+    a {
+      color: var(--wiki-link);
+      text-decoration: none;
+    }
+
+    a:visited { color: var(--wiki-link-visited); }
+    a:hover { text-decoration: underline; color: var(--wiki-link-hover); }
+
+    /* Infobox */
     .infobox {
       float: right;
       margin: 0 0 1em 1em;
       width: 280px;
-      border: 1px solid #a2a9b1;
-      background: #f8f9fa;
+      border: 1px solid var(--wiki-border);
+      background: var(--wiki-bg);
       font-size: 88%;
     }
+
     .infobox th {
       background: #eaecf0;
       text-align: center;
       font-weight: bold;
       padding: 0.3em;
     }
+
     .infobox td {
       padding: 0.3em;
-      border-top: 1px solid #a2a9b1;
+      border-top: 1px solid var(--wiki-border);
+      vertical-align: top;
     }
 
     .toc {
-      background: #f8f9fa;
-      border: 1px solid #a2a9b1;
+      background: var(--wiki-bg);
+      border: 1px solid var(--wiki-border);
       padding: 0.5em 1em;
       width: 250px;
       font-size: 90%;
+      margin: 1em 0;
     }
-    .toc h2 { font-size: 1em; border: none; margin: 0 0 0.5em 0; }
-    .toc ul { margin: 0; padding-left: 1.5em; list-style-type: decimal; }
+
+    .toc h2 {
+      font-size: 1em;
+      border: none;
+      margin: 0 0 0.5em 0;
+    }
+
+    .toc ul {
+      margin: 0;
+      padding-left: 1.5em;
+      list-style-type: decimal;
+    }
 
     footer {
       font-size: 0.85em;
       color: #54595d;
       text-align: center;
-      padding: 2em 0;
+      padding: 2em 0 3em 0;
+      clear: both;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 720px) {
+      .infobox {
+        float: none;
+        margin: 1em auto;
+        width: 100%;
+      }
+      #content {
+        padding: 1em;
+      }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      body, #content {
+        background-color: #202122;
+        color: #eaecf0;
+      }
+      a { color: #7aa6ff; }
+      a:visited { color: #9aa9ff; }
+      .infobox {
+        background-color: #2a2a2a;
+        border-color: #555;
+      }
+      .infobox th {
+        background-color: #3a3a3a;
+      }
+      .toc {
+        background-color: #2a2a2a;
+        border-color: #555;
+      }
     }
   </style>
 </head>
+
 <body>
   <div id="content">
-
     <h1>Wikipedia Book Club (London)</h1>
 
     <table class="infobox" role="presentation">
       <tr><th colspan="2">Wikipedia Book Club</th></tr>
-      <tr><td colspan="2" style="text-align:center;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" alt="Wikipedia logo" width="100">
-      </td></tr>
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" alt="Wikipedia logo" width="90">
+        </td>
+      </tr>
       <tr><th>Location</th><td>London, United Kingdom</td></tr>
       <tr><th>Established</th><td>2025</td></tr>
-      <tr><th>Meetings</th><td>Every other Thursday, 7–9pm</td></tr>
+      <tr><th>Meetings</th><td>Every other Thursday, 7–9 pm</td></tr>
       <tr><th>Venue</th><td>Central London (varies by session)</td></tr>
       <tr><th>Focus</th><td>Reading and discussing Wikipedia articles</td></tr>
       <tr><th>Website</th><td><a href="#">wikipedia-book.club</a></td></tr>
     </table>
 
     <p><b>The Wikipedia Book Club (London)</b> is an informal, in-person discussion group based in London, United Kingdom. 
-    The club meets fortnightly to read, analyse, and discuss articles from the English-language Wikipedia — 
-    focusing on topics of cultural, historical, and scientific interest. Meetings are open to the public and aim to promote critical reading and curiosity.</p>
+    The club meets fortnightly to read, analyse, and discuss articles from the English-language Wikipedia — focusing on topics of cultural, historical, and scientific interest. 
+    Meetings are open to the public and aim to promote critical reading and curiosity.</p>
 
     <div class="toc" id="toc">
       <h2>Contents</h2>
@@ -130,7 +212,7 @@
 
     <h3>Upcoming meeting</h3>
     <p><b>Date:</b> Thursday, 16 October 2025<br>
-       <b>Topic:</b> <i>Hadrian's Wall</i> (Wikipedia article)<br>
+       <b>Topic:</b> <i>Hadrian's Wall</i> (<a href="https://en.wikipedia.org/wiki/Hadrian%27s_Wall" target="_blank">Wikipedia article</a>)<br>
        <b>Location:</b> The National Café, Trafalgar Square</p>
 
     <h2 id="reading-list">Reading list</h2>
@@ -142,8 +224,7 @@
     </ul>
 
     <h2 id="join">How to join</h2>
-    <p>Anyone is welcome to attend the Wikipedia Book Club. 
-    Attendance is free, and new members are encouraged to bring an article suggestion. 
+    <p>Anyone is welcome to attend the Wikipedia Book Club. Attendance is free, and new members are encouraged to bring an article suggestion.  
     To join or receive meeting updates, email: <a href="mailto:wikipedia.book.club.london@gmail.com">wikipedia.book.club.london@gmail.com</a>.</p>
 
     <h2 id="external-links">External links</h2>
@@ -154,9 +235,9 @@
     </ul>
 
     <footer>
-      Retrieved from <i>https://wikipedia-book.club</i> — © 2025 Wikipedia Book Club (London). Not affiliated with Wikimedia Foundation.
+      Retrieved from <i>https://gregmortonbenches.github.io/wikipediabookclub/</i> — © 2025 Wikipedia Book Club (London).  
+      Not affiliated with the Wikimedia Foundation.
     </footer>
-
   </div>
 </body>
 </html>
