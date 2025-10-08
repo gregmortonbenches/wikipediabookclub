@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wikipedia Book Club - Wikipedia</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" type="image/png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo.jpeg" type="image/jpeg" />
 
   <!-- Wikipedia visual style -->
   <style>
@@ -27,7 +29,7 @@
     #content {
       max-width: 900px;
       margin: 2em auto;
-      padding: 1em;
+      padding: 1.5em;
       background: #fff;
       border: 1px solid #a2a9b1;
       border-radius: 2px;
@@ -37,7 +39,6 @@
     h1, h2, h3 {
       font-family: "Linux Libertine", "Georgia", serif;
       font-weight: normal;
-      margin-bottom: 0.2em;
       color: #202122;
     }
 
@@ -45,6 +46,15 @@
       border-bottom: 1px solid #a2a9b1;
       font-size: 1.8em;
       margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    h1 img {
+      width: 42px;
+      height: auto;
+      vertical-align: middle;
     }
 
     h2 {
@@ -70,12 +80,14 @@
       font-size: 88%;
       border-collapse: collapse;
     }
+
     .infobox th {
       background: #eaecf0;
       text-align: center;
       font-weight: bold;
       padding: 0.3em;
     }
+
     .infobox td {
       padding: 0.3em;
       border-top: 1px solid #a2a9b1;
@@ -102,9 +114,7 @@
       padding-left: 1.2em;
       list-style-type: none;
     }
-    .toc li {
-      margin: 0.2em 0;
-    }
+    .toc li { margin: 0.2em 0; }
 
     /* ===== Responsive layout ===== */
     @media (max-width: 720px) {
@@ -119,6 +129,16 @@
       #content {
         border: none;
         border-radius: 0;
+        margin: 0;
+        padding: 1em;
+      }
+      h1 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2em;
+      }
+      h1 img {
+        width: 36px;
       }
     }
 
@@ -134,12 +154,15 @@
 <body>
   <div id="content">
 
-    <h1>Wikipedia Book Club</h1>
+    <h1>
+      <img src="logo.jpeg" alt="Wikipedia Book Club logo">
+      Wikipedia Book Club
+    </h1>
 
     <table class="infobox" role="presentation">
       <tr><th colspan="2">Wikipedia Book Club</th></tr>
       <tr><td colspan="2" style="text-align:center;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" alt="Wikipedia logo" width="100">
+        <img src="logo.jpeg" alt="Wikipedia Book Club logo" width="100">
       </td></tr>
       <tr><th>Location</th><td>London, United Kingdom</td></tr>
       <tr><th>Established</th><td>2025</td></tr>
@@ -149,7 +172,7 @@
       <tr><th>Website</th><td><a href="#">wikipedia-book.club</a></td></tr>
     </table>
 
-    <p><b>The Wikipedia book club</b> is an informal, in-person meet-up based in London.
+    <p><b>The Wikipedia Book Club</b> is an informal, in-person meet-up based in London.
     The club meets once a month to share favourite articles from Wikipedia — 
     focusing on topics of cultural, historical, and scientific interest.</p>
 
@@ -165,14 +188,12 @@
     </div>
 
     <h2 id="about">About</h2>
-    <p>The club began in 2025  to explore Wikipedia articles together.
-    </p>
-
+    <p>The club began in 2025 to explore Wikipedia articles together.</p>
 
     <h2 id="meetings">Meetings</h2>
     <p>Meetings take place <b>once a month on Thursday at 7:00 pm</b>.
-    The venue is XXX
-    Each session begins with XXX </p>
+    The venue is currently <i>Central London</i>.
+    Each session begins with members presenting articles of their choice, followed by group discussion.</p>
 
     <h2 id="reading-list">Reading list</h2>
     <ul>
