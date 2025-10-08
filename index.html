@@ -48,13 +48,17 @@
       margin-top: 0;
       display: flex;
       align-items: center;
-      gap: 0.5em;
+      gap: 0.6em;
     }
 
     h1 img {
-      width: 42px;
+      width: 52px;
       height: auto;
       vertical-align: middle;
+      border: 1px solid #a2a9b1;
+      background: #fff;
+      padding: 2px;
+      border-radius: 2px;
     }
 
     h2 {
@@ -92,6 +96,16 @@
       padding: 0.3em;
       border-top: 1px solid #a2a9b1;
       vertical-align: top;
+    }
+
+    .infobox img {
+      width: 160px;
+      max-width: 90%;
+      height: auto;
+      border: 1px solid #a2a9b1;
+      background: #fff;
+      padding: 3px;
+      border-radius: 2px;
     }
 
     /* ===== Table of contents ===== */
@@ -135,10 +149,10 @@
       h1 {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.2em;
+        gap: 0.3em;
       }
       h1 img {
-        width: 36px;
+        width: 44px;
       }
     }
 
@@ -161,9 +175,11 @@
 
     <table class="infobox" role="presentation">
       <tr><th colspan="2">Wikipedia Book Club</th></tr>
-      <tr><td colspan="2" style="text-align:center;">
-        <img src="logo.jpeg" alt="Wikipedia Book Club logo" width="100">
-      </td></tr>
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <img src="logo.jpeg" alt="Wikipedia Book Club logo">
+        </td>
+      </tr>
       <tr><th>Location</th><td>London, United Kingdom</td></tr>
       <tr><th>Established</th><td>2025</td></tr>
       <tr><th>Meetings</th><td>Once a month, Thursday 7:00 pm</td></tr>
